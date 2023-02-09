@@ -20,6 +20,7 @@ Parser::Parser(int argc, char *argv[])
             cout << "-c [cloudname] to change the cloud source" << endl;
             cout << "-s to change weather to snow" << endl;
             cout << "-r to change weather to rain" << endl;
+            cout << "-l to see all cows" << endl;
             exit(0);
         }
         if (tmp == "-f")
