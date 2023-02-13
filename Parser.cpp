@@ -21,6 +21,7 @@ Parser::Parser(int argc, char *argv[])
             cout << "-s to change weather to snow" << endl;
             cout << "-r to change weather to rain" << endl;
             cout << "-m to change weather to money" << endl;
+            cout << "-hs to change weather to hashtag" << endl;
             cout << "-l to see list of all cows and clouds" << endl;
             exit(0);
         }
@@ -42,6 +43,8 @@ Parser::Parser(int argc, char *argv[])
             flags.rain = true;
         else if (tmp == "-m")
             flags.money = true;
+        else if (tmp == "-hs")
+            flags.hashtag = true;
         else if (tmp == "-l"){
             std::cout << "cows:" << std::endl;
             std::string path = "cows";
@@ -93,6 +96,8 @@ char Parser::getFill()
         return '*';
     else if (flags.rain)
         return '.';
+    else if (flags.hashtag)
+        return '#';
     else if (flags.money)
         return '$';
     else

@@ -15,6 +15,7 @@ class Parser {
         bool snow = false;
         bool rain = false;
         bool money = false;
+        bool hashtag = false;
     } flags;
 
 public:
