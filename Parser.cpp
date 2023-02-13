@@ -1,4 +1,5 @@
 #include "Parser.hpp"
+#include "Converter.hpp"
 #include <filesystem>
 namespace fs = std::filesystem;
 
@@ -22,6 +23,7 @@ Parser::Parser(int argc, char *argv[])
             cout << "-r to change weather to rain" << endl;
             cout << "-m to change weather to money" << endl;
             cout << "-l to see list of all cows and clouds" << endl;
+            cout << "-b [filename] to convert bmp image into cow" << endl;
             exit(0);
         }
         if (tmp == "-f")
@@ -52,6 +54,10 @@ Parser::Parser(int argc, char *argv[])
             for (const auto & entry : fs::directory_iterator(path))
                 std::cout << entry.path() << std::endl;
             exit(0);
+        }
+        else if (tmp == "-b") {
+            arg++;
+            Converter a(argv[arg]);
         }
         else while (arg < argc)
         {
