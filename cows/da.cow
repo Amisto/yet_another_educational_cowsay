@@ -1,0 +1,13 @@
+##
+## A cute little wabbit
+##
+$the_cow = <<EOC;
+  $thoughts
+   $thoughts
+       	___
+       |   |
+      _|___|_
+     |       |
+     |       |
+     |_______|
+EOC
