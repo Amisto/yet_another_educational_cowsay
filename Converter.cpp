@@ -12,7 +12,7 @@ Converter::Converter(string fname) {
     int width = *(int*)&info[18];
     int height = *(int*)&info[22];
 
-    unsigned long int size = (width*3 + 3) & (~3);
+    unsigned long int size = (width * 3 + 3) & (~3);
     unsigned char* data = new unsigned char[size];
     char symbols[] = " .,*(/%#@";
     int** grayscale = new int*[height];
@@ -36,8 +36,17 @@ Converter::Converter(string fname) {
     ofstream result;
     result.open(("./cows/" + fname + ".cow").c_str());
 
-    for (int i = 0; i < height; i++) {
-        for (int j = 0; j < width; j++) {
+    int max_size = 30;
+
+    int nheight = (height < max_size ? height : max_size) * 2 / 3;
+    int nwidth = width < max_size ? width : max_size;
+    float dh = 1 + (float) (height - nheight) / (nheight - 1);
+    float dw = 1 + (float) (width - nwidth) / (nwidth - 1);
+
+    cout << nheight << " " << height << " " << dh << endl << nwidth << " " << width <<  " " << dw << endl;
+
+    for (int i = 0; i < height; i += dh) {
+        for (int j = 0; j < width; j += dw) {
             result << symbols[grayscale[i][j] * 8 / 255];
         }
         result << endl;
