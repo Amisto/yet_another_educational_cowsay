@@ -15,6 +15,8 @@ class Parser {
         bool snow = false;
         bool rain = false;
         bool money = false;
+        bool exclaim = false;
+        bool question = false;
     } flags;
 
 public:
