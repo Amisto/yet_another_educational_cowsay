@@ -43,8 +43,6 @@ Converter::Converter(string fname) {
     float dh = 1 + (float) (height - nheight) / (nheight - 1);
     float dw = 1 + (float) (width - nwidth) / (nwidth - 1);
 
-    cout << nheight << " " << height << " " << dh << endl << nwidth << " " << width <<  " " << dw << endl;
-
     for (int i = 0; i < height; i += dh) {
         for (int j = 0; j < width; j += dw) {
             result << symbols[grayscale[i][j] * 8 / 255];

@@ -57,7 +57,9 @@ Parser::Parser(int argc, char *argv[])
         }
         else if (tmp == "-b") {
             arg++;
-            Converter a(argv[arg]);
+            Converter newcow(argv[arg]);
+            cowsource = argv[arg];
+            flags.cowsource = true;
         }
         else while (arg < argc)
         {
