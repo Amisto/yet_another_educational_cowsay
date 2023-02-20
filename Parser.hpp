@@ -7,14 +7,13 @@ using std::string;
 class Parser {
 
     string cowsource, cloudsource, message;
+    char background;
     struct Flags {
         bool cowsource = false;
         bool cloudsource = false;
         bool eyes = false;
         bool tongue = false;
-        bool snow = false;
-        bool rain = false;
-        bool money = false;
+        bool background = false;
     } flags;
 
 public:
