@@ -18,9 +18,7 @@ Parser::Parser(int argc, char *argv[])
         {
             cout << "-f [cowname] to change the cow source" << endl;
             cout << "-c [cloudname] to change the cloud source" << endl;
-            cout << "-s to change weather to snow" << endl;
-            cout << "-r to change weather to rain" << endl;
-            cout << "-m to change weather to money" << endl;
+            cout << "-a [background] to set background" << endl;
             cout << "-l to see list of all cows and clouds" << endl;
             exit(0);
         }
@@ -36,12 +34,12 @@ Parser::Parser(int argc, char *argv[])
             cloudsource = argv[arg];
             flags.cloudsource = true;
         }
-        else if (tmp == "-s")
-            flags.snow = true;
-        else if (tmp == "-r")
-            flags.rain = true;
-        else if (tmp == "-m")
-            flags.money = true;
+	else if (tmp == "-a"){
+	    arg++;
+            background = argv[arg][0];	
+	    flags.background = true;
+	}
+
         else if (tmp == "-l"){
             std::cout << "cows:" << std::endl;
             std::string path = "cows";
@@ -89,12 +87,8 @@ string Parser::getCloud()
 
 char Parser::getFill()
 {
-    if (flags.snow)
-        return '*';
-    else if (flags.rain)
-        return '.';
-    else if (flags.money)
-        return '$';
+    if (flags.background)
+        return background;
     else
         return ' ';
 }
