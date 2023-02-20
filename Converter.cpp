@@ -4,7 +4,7 @@
 using namespace std;
 
 Converter::Converter(string fname) {
-    FILE* f = fopen((fname + ".bmp").c_str(), "rb");
+    FILE* f = fopen(("./bmps/" + fname + ".bmp").c_str(), "rb");
     unsigned char info[54];
 
     fread(info, sizeof(unsigned char), 54, f);
