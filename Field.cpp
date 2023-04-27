@@ -5,7 +5,7 @@
 using std::cout;
 using std::endl;
 
-Field::Field(Parser& parser) : cow(parser.getCow()), cloud(parser.getMessage(), parser.getCloud()), fill(parser.getFill()), message(parser.getMessage()) 
+Field::Field(Parser& parser) : cow(parser.getCow()), cloud(parser.getMessage(), parser.getCloud()), sun(parser.getSun()), fill(parser.getFill()), message(parser.getMessage()) 
 {
     
 }
@@ -18,6 +18,8 @@ void Field::print()
     x = cow.getWidth() + cloud.getWidth() / 2 + 20;
     y = cow.getHeight() + cloud.getHeight() + 2;
     
+    cout << ':';
+    cout << sun;
     for (int i = 0; i < x; i++)
         cout << fill;
     cout << endl;

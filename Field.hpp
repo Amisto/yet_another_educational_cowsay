@@ -14,6 +14,7 @@ class Field {
     Cow cow;
     Cloud cloud;
     char fill;
+    char sun; 
 
 public:
 
