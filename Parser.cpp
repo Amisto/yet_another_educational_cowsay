@@ -38,6 +38,8 @@ Parser::Parser(int argc, char *argv[])
             flags.snow = true;
         else if (tmp == "-r")
             flags.rain = true;
+        else if (tmp == "-smth")
+            flags.smth = true;
         else if (tmp == "-l"){
             std::cout << "cows:" << std::endl;
             std::string path = "cows";
@@ -89,6 +91,8 @@ char Parser::getFill()
         return '*';
     else if (flags.rain)
         return '.';
+    else if (flags.smth)
+        return '&';
     else 
         return ' ';
 }
