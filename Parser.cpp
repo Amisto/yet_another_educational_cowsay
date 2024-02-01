@@ -45,7 +45,7 @@ Parser::Parser(int argc, char *argv[])
 	}
         else if (tmp == "-r")
             flags.rain = true;
-            
+
         else if (tmp == "-b")
             flags.background = true;
 
@@ -73,9 +73,14 @@ Parser::Parser(int argc, char *argv[])
     }
     if (message.size() == 0)
     {
+        cout<<"You need to enter a message! (to show the message type %end)";
         string tmp;
-        while (cin >> tmp)
-            message += tmp + " ";
+        while (cin >> tmp){
+          if(tmp=="%end"){
+            return;
+          }
+          message += tmp + " ";
+        }
     }
 }
 
@@ -101,16 +106,16 @@ char Parser::getFill()
 {
     if (flags.snow)
         return '*';
-    
+
     else if (flags.rain)
         return '.';
 
     else if (flags.background)
         return '&';
-        
+
     else if (flags.money)
         return '$';
-    
+
     else
         return ' ';
 }
@@ -121,11 +126,11 @@ char Parser::getSun()
     {
 	return ')';
     }
-    else 
+    else
 	return ' ';
 }
 
-    
+
 
 
 string Parser::getMessage()
