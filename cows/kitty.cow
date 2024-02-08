@@ -1,0 +1,13 @@
+$ cat ~/tmp/cat.cow
+## an ASCII cat found in google
+$the_cow = <<"EOC"
+  $thoughts
+   $thoughts
+   |\\_._/|
+   |-o.o-|
+   (  T  )
+  .^`-^-'^.
+  `.  ;  .'
+  | | | | |
+ ((_((|))_))
+EOC
