@@ -73,14 +73,10 @@ Parser::Parser(int argc, char *argv[])
     }
     if (message.size() == 0)
     {
-        cout<<"You need to enter a message! (to show the message type %end)";
+        cout<<"You need to enter a message!\n";
         string tmp;
-        while (cin >> tmp){
-          if(tmp=="%end"){
-            return;
-          }
-          message += tmp + " ";
-        }
+        std::getline(cin, tmp);
+        message += tmp;
     }
 }
 
