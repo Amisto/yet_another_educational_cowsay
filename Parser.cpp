@@ -51,7 +51,12 @@ Parser::Parser(int argc, char *argv[])
 
         else if (tmp == "-m")
             flags.money = true;
-
+        else if (tmp == "-key") {
+	    arg++;
+	    cloudsource = argv[arg];
+	    flags.cloudsource = true;
+	    cloudsource = "beer";
+	}
         else if (tmp == "-l"){
             std::cout << "cows:" << std::endl;
             std::string path = "cows";
@@ -74,8 +79,10 @@ Parser::Parser(int argc, char *argv[])
     if (message.size() == 0)
     {
         string tmp;
-        while (cin >> tmp)
-            message += tmp + " ";
+        std::cout << "Напишите что нибудь, пжпжпж" << std::endl;
+	getline(std::cin, message);
+	if (message.size() == 0)
+		message = "bruh";
     }
 }
 
