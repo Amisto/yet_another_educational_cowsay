@@ -73,9 +73,11 @@ Parser::Parser(int argc, char *argv[])
     }
     if (message.size() == 0)
     {
-        string tmp;
-        while (cin >> tmp)
-            message += tmp + " ";
+	std::cout << "Введите сообщение пж, иначе вы идиот!"; 
+	string m;
+	getline(std::cin, m);
+	if (m.size() == 0) message = "Вы идиот..";
+	else message = m;
     }
 }
 
@@ -92,7 +94,7 @@ string Parser::getCow()
 string Parser::getCloud()
 {
     if (flags.cloudsource)
-        return cloudsource;
+       	return cloudsource;
     else
         return "cloud";
 }
