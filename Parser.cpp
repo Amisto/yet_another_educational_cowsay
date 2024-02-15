@@ -31,8 +31,10 @@ Parser::Parser(int argc, char *argv[])
             cowsource = argv[arg];
             flags.cowsource = true;
         }
+	else if (tmp == "-help")
+	    message = "https://disk.yandex.ru/d/SOFt0CVHCrcjhg - диск ФAKN";
         else if (tmp == "-c")
-        {
+	{
             arg++;
             cloudsource = argv[arg];
             flags.cloudsource = true;
@@ -45,18 +47,11 @@ Parser::Parser(int argc, char *argv[])
 	}
         else if (tmp == "-r")
             flags.rain = true;
-            
         else if (tmp == "-b")
             flags.background = true;
 
         else if (tmp == "-m")
             flags.money = true;
-        else if (tmp == "-key") {
-	    arg++;
-	    cloudsource = argv[arg];
-	    flags.cloudsource = true;
-	    cloudsource = "beer";
-	}
         else if (tmp == "-l"){
             std::cout << "cows:" << std::endl;
             std::string path = "cows";
