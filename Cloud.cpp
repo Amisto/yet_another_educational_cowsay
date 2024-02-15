@@ -39,7 +39,8 @@ void Cloud::print(unsigned int left, char fill, unsigned int width)
             cout << fill;
         for (unsigned int j = 0; j < 4; j++)
             cout << picture[2][j];
-        unsigned int length = i < message.size()/messageLength ? messageLength : message.size() - i*messageLength;
+        unsigned int length = (i < message.size()/messageLength) ? messageLength : message.size() - i*messageLength;
+        length = (message.size() == 0) ? 0 : length;
         for (unsigned int j = 0; j < length ; j++)    
             cout << message[i*messageLength + j];
         for (unsigned int j = length; j < messageLength; j++)
