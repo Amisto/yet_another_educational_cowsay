@@ -15,8 +15,8 @@ Field::~Field() {}
 void Field::print()
 {
     int x, y;
-    x = cow.getWidth() + cloud.getWidth() / 2 + 20;
-    y = cow.getHeight() + cloud.getHeight() + 2;
+    x = cow.getWidth() + cloud.getWidth() + 10;
+    y = cow.getHeight() + cloud.getHeight();
     
     cout << ':';
     cout << sun;

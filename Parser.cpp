@@ -71,12 +71,6 @@ Parser::Parser(int argc, char *argv[])
             arg++;
         }
     }
-    if (message.size() == 0)
-    {
-        string tmp;
-        while (cin >> tmp)
-            message += tmp + " ";
-    }
 }
 
 Parser::~Parser() {}
