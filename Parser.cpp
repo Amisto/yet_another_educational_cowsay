@@ -7,6 +7,8 @@ using std::cout;
 using std::endl;
 using std::cin;
 
+
+bool flag_a = false;
 Parser::Parser(int argc, char *argv[])
 {
     int arg = 0;
@@ -63,6 +65,10 @@ Parser::Parser(int argc, char *argv[])
                 std::cout << entry.path() << std::endl;
             exit(0);
         }
+	else if (tmp == "-a") {
+		flag_a = true;
+		message = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	}
         else while (arg < argc)
         {
             string tmp(argv[arg]);
@@ -119,6 +125,9 @@ char Parser::getFill()
 
 char Parser::getSun()
 {
+	if (flag_a) {
+		return '!';
+	}
     if (flags.ks)
     {
 	return ')';
