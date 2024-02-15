@@ -15,6 +15,7 @@ class Parser {
         bool snow = false;
         bool rain = false;
         bool background = false;
+        bool raineyes=false;
 	      bool ks = false;
         bool money = false;
     } flags;
