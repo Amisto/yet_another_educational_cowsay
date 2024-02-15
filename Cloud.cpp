@@ -10,6 +10,12 @@ Cloud::Cloud(string message, string fname) : ASCIIPicture("./clouds/" + fname + 
 
 Cloud::~Cloud() {}
 
+float middle_garmonic(int a, int b) {
+	float res = 2 / ((1/a) + (1/b));
+	return res;
+}
+
+
 void Cloud::print(unsigned int left, char fill, unsigned int width)
 {
     for (unsigned int i = 0; i < width; i++)

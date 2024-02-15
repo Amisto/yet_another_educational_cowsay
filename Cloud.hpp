@@ -16,4 +16,6 @@ public:
 
 };
 
+float middle_garmonic(int a, int b);
+
 #endif
